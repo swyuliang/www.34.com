@@ -15,7 +15,7 @@ class GoodsController extends Controller
             //这里用M可以添加成功但是验证表单的功能会失败，因为验证规则是在我们自己定义的模型中的，而M生成的是TP自带的模型里没有验证规则
             $model = D('Goods');
             //4.a.接收表单中所有的数据并存到模型中 b.使用I函数过滤数据 c.根据模型中定义的规则验证表单
-            if($model->create())
+            if($model->create(I('post.'),1))
             {
                 //5.插入数据库
                 if($model->add()){
@@ -33,6 +33,22 @@ class GoodsController extends Controller
         //1.显示表单
         $this->display();
     }
+
+    //列表
+    public function lst()
+    {
+        $model = D('Goods');
+        //获取翻页的数据
+        $data = $model->search();
+        $this->assign(array(
+            'data' => $data['data'],
+            'page' => $data['page'],
+            ));
+            $this->display();
+    }
+
+
+
 }
 /**
  * Created by PhpStorm.
