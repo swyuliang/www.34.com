@@ -47,6 +47,42 @@ class GoodsController extends Controller
             $this->display();
     }
 
+    //******删除方法
+    public function delete()
+    {
+        $model = D('Goods');
+        $model->delete(I('get.id'));
+        $this->success('操作成功',U('lst?p='.I('get.p')));
+    }
+
+    //**修改方法
+    public function edit(){
+        //处理表单
+        if(IS_POST)
+        {
+            $model = D('Goods');
+            if($model->create(I('post.'),2))
+            {
+                //save方法的返回值时影响的记录数（mysql_affected_rows）,如果修改时没有修改任何值会返回0，失败返回FALSE
+                if(FALSE !== $model->save())
+                {
+                    $this->success('操作成功！',U('lst?p='.I('get.p')));
+                    exit;
+                }
+            }
+            //如果失败显示失败信息
+            $this->error($model->getError());
+        }
+        //接收商品的ID
+        $id = I('get.id');
+        //先从数据库中取出要修改的记录的信息
+        $model = M('Goods');
+        $info =$model->find($id);
+        $this->assign('info',$info);
+        //显示修改的表单
+        $this->display();
+    }
+
 
 
 }

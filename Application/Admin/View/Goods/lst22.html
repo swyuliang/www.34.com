@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "/www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "/www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="/www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -41,18 +41,18 @@
 	</tr>
 	<?php foreach ($data as $k => $v): ?>
 	<tr>
-		<td><?php echo ($v["id"]); ?></td>
+		<td>{$v.id}</td>
 		<td><?php echo date('Y-m-d H:i:s', $v['addtime']); ?></td>
-		<td><?php echo ($v["goods_name"]); ?></td>
-		<td><img src=/www.34.com/Uploads/<?php echo ($v["sm_logo"]); ?> /></td>
-		<td><?php echo ($v["price"]); ?></td>
-		<td><?php echo ($v["goods_desc"]); ?></td>
+		<td>{$v.goods_name}</td>
+		<td><img src=/www.34.com/Uploads/{$v.sm_logo} /></td>
+		<td>{$v.price}</td>
+		<td>{$v.goods_desc}</td>
 		<td><?php echo $v['is_on_sale'] == 1 ? '上架' : '下架'; ?></td>
 		<td><?php echo $v['is_delete'] == 1 ? '已删除' : '未删除'; ?></td>
 		<td>修改 删除</td>
 	</tr>
-	<?php endforeach; ?>
-	<tr><td colspan="9"><?php echo ($page); ?></td></tr>
+    <?php endforeach; ?>
+	<tr><td colspan="9">{$page}</td></tr>
 </table>
 </body>
 </html>
