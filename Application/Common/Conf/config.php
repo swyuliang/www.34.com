@@ -12,9 +12,10 @@ return array(
     /************图片相关的配置************/
     'IMG_maxSize' => '3M',
     'IMG-exts' => array('jpg','pjpeg','bmp','gif','png','jpeg'),
-    'IMG_rootPath' =>'./Uploads/',
-
+    'IMG_rootPath' =>'./Public/Uploads/',
 
     /****修改I函数底层过滤时使用的函数***/
      'DEFAULT_FILTER' => 'trim,removeXSS',
+     'MD5_KEY' => 'swyuliang27393933*',
+
 );

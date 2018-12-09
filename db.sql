@@ -30,12 +30,27 @@ CREATE TABLE IF NOT EXISTS php34_goods
 #SELECT * FROM php34_goods WHERE MATCH goods_name AGAINST 'xxxx';
 # 但MYSQL自带的全文索引不支持中文，所以不能使用MYSQL自带的全文索引功能，所以如果要优化只能使用第三方的全文索引## 引擎，如：sphinx,lucence等。
 
+-- 创建后台登录账号表格
+DROP TABLE IF EXISTS php34_admin;
+ CREATE TABLE php34_admin
+ (
+      id tinyint unsigned not null auto_increment,
+      username varchar(30) not null comment '账号',
+      password char(32) not null comment '密码',
+      is_use tinyint unsigned not null default '1' comment '是否启用 1：启用 0：禁用',
+      primary key (id)
+ )engine=MyISAM default charset=utf8;
+
+INSERT INTO php34_admin VALUES(1,'root','08bc0180c2fcf73b3903871f18fd7040',1);
 
 
-
-
-
-
-
+DROP TABLE IF EXISTS php34_category;
+CREATE TABLE php34_category
+(
+    id smallint unsigned not null auto_increment,
+    cat_name varchar(30) not null comment '分类名称',
+    parent_id smallint unsigned not null default '0' comment '上级分类的ID，0：代表顶级',
+    primary key (id)
+)engine=MyISAM default charset=utf8 comment '商品分类表';
 
 

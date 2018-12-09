@@ -1,9 +1,15 @@
 <?php
 namespace Admin\Controller;
-use Think\Controller;
+//use Think\Controller;
 
-class GoodsController extends Controller
+class GoodsController extends IndexController
 {
+    public function test()
+    {
+        /**测试用的*/
+        $this->display();
+    }
+
     public  function add()
     {
         //2.处理表单
@@ -30,6 +36,11 @@ class GoodsController extends Controller
             //9.显示错误信息，并跳回到上一个页面
             $this->error($error);
         }
+
+//        $this->assign('_page_title','添加商品');
+//        $this->assign('_page_btn_name','商品列表');
+//        $this->assign('_page_btn_link',U('lst'));
+        $this->setPageBtn('添加商品','商品列表',U('lst'));
         //1.显示表单
         $this->display();
     }
@@ -44,7 +55,14 @@ class GoodsController extends Controller
             'data' => $data['data'],
             'page' => $data['page'],
             ));
-            $this->display();
+
+
+        //设置页面信息
+//        $this->assign('_page_title','商品列表');
+//        $this->assign('_page_btn_name','添加商品');
+//        $this->assign('_page_btn_link',U('add'));
+        $this->setPageBtn('商品列表','添加商品',U('add'));
+        $this->display();
     }
 
     //******删除方法
@@ -79,6 +97,8 @@ class GoodsController extends Controller
         $model = M('Goods');
         $info =$model->find($id);
         $this->assign('info',$info);
+
+        $this->setPageBtn('修改商品','商品列表',U('lst'));
         //显示修改的表单
         $this->display();
     }

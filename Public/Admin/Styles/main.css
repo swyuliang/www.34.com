@@ -854,5 +854,19 @@ em, cite, th {
 
 
 /******翻页属性*******/
-span.current{ padding: 5px;margin: 3px;background: #FF0000;color:white;font-weight: bold}
-a.num{padding: 5px; margin: 3px; border:1px solid#FF0000;}
+span.current{
+  padding: 5px;
+  margin: 3px;
+  background: #2F9DB5;
+  border: 1px solid#2F9DB5;
+  color:white;
+  font-weight: bold;}
+
+a.num{
+  padding:5px;
+  margin: 3px;
+  border:1px solid#2F9DB5;}
+
+br.space{
+  background: white;
+}

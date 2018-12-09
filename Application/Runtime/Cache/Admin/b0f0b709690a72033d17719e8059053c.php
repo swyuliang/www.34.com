@@ -4,8 +4,8 @@
 <title>ECSHOP 管理中心</title>
 <meta name="robots" content="noindex, nofollow">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link href="/www.34.com/Public/Admin/Styles/general.css" rel="stylesheet" type="text/css" />
-<link href="/www.34.com/Public/Admin/Styles/main.css" rel="stylesheet" type="text/css" />
+<link href="/Public/Admin/Styles/general.css" rel="stylesheet" type="text/css" />
+<link href="/Public/Admin/Styles/main.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <h1>
@@ -118,8 +118,3 @@
         </tr>
     </table>
 </div>
-<div id="footer">
-共执行 29 个查询，用时 0.539249 秒，Gzip 已禁用，内存占用 3.502 MB<br />
-版权所有 &copy; 2005-2012 上海商派网络科技有限公司，并保留所有权利。</div>
-</body>
-</html>

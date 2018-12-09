@@ -3,7 +3,7 @@
 <head>
 <title>ECSHOP Menu</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link href="/www.34.com/Public/Admin/Styles/general.css" rel="stylesheet" type="text/css" />
+<link href="/Public/Admin/Styles/general.css" rel="stylesheet" type="text/css" />
 
 <style type="text/css">
 body {
@@ -79,15 +79,15 @@ body {
   color:#EB8A3D;
 }
 .explode {
-  background:url(/www.34.com/Public/Admin/Images/menu_minus.gif) no-repeat 0px 3px;
+  background:url(/Public/Admin/Images/menu_minus.gif) no-repeat 0px 3px;
   font-weight:bold;
 }
 .collapse {
-  background:url(/www.34.com/Public/Admin/Images/menu_plus.gif) no-repeat 0px 3px;
+  background:url(/Public/Admin/Images/menu_plus.gif) no-repeat 0px 3px;
   font-weight:bold;
 }
 .menu-item {
-  background:url(/www.34.com/Public/Admin/Images/menu_arrow.gif) no-repeat 0px 3px;
+  background:url(/Public/Admin/Images/menu_arrow.gif) no-repeat 0px 3px;
   font-weight:normal;
 }
 #help-title {
@@ -114,7 +114,7 @@ body {
     <p>
         <span style="float:right; padding:3px 5px;" >
             <a href="javascript:toggleCollapse();">
-                <img id="toggleImg" src="/www.34.com/Public/Admin/Images/menu_minus.gif" width="9" height="9" border="0" alt="闭合" />
+                <img id="toggleImg" src="/Public/Admin/Images/menu_minus.gif" width="9" height="9" border="0" alt="闭合" />
             </a>
         </span>
         <span class="tab-front" id="menu-tab">菜单</span>
@@ -128,7 +128,7 @@ body {
                 <ul>
                     <li class="menu-item"><a href="<?php echo U('Admin/Goods/lst'); ?>" target="main-frame">商品列表</a></li>
                     <li class="menu-item"><a href="goodsAdd.html" target="main-frame">添加新商品</a></li>
-                    <li class="menu-item"><a href="categoryList.html" target="main-frame">商品分类</a></li>
+                    <li class="menu-item"><a href="<?php echo U('Admin/Category/lst'); ?>" target="main-frame">商品分类</a></li>
                     <li class="menu-item"><a href="brandList.html" target="main-frame">商品品牌</a></li>
                     <li class="menu-item"><a href="goodsTrash.html" target="main-frame">商品回收站</a></li>
                 </ul>
@@ -182,7 +182,7 @@ body {
             }
         }
         collapse = !collapse;
-        document.getElementById('toggleImg').src = collapse ? '/www.34.com/Public/Admin/Images/menu_minus.gif' : '/www.34.com/Public/Admin/Images/menu_plus.gif';
+        document.getElementById('toggleImg').src = collapse ? '/Public/Admin/Images/menu_minus.gif' : '/Public/Admin/Images/menu_plus.gif';
         document.getElementById('toggleImg').alt = collapse ? collapse_all : expand_all;
     }
 
@@ -302,7 +302,7 @@ body {
                         }
                     }
                 }
-                document.getElementById('toggleImg').src = collapse ? '/www.34.com/Public/Admin/Images/menu_minus.gif' : '/www.34.com/Public/Admin/Images/menu_plus.gif';
+                document.getElementById('toggleImg').src = collapse ? '/Public/Admin/Images/menu_minus.gif' : '/Public/Admin/Images/menu_plus.gif';
                 document.getElementById('toggleImg').alt = collapse ? collapse_all : expand_all;
             }
         }

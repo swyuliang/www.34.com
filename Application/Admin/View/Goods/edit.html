@@ -1,18 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta http-equiv="content-type" content="text/html" charset="UTF-8">
-    <script type="text/javascript" charset="utf-8" src="__PUBLIC__/ueditor/ueditor.config.js"></script>
-    <script type="text/javascript" charset="utf-8" src="__PUBLIC__/ueditor/ueditor.all.min.js"></script>
-    <script type="text/javascript" charset="utf-8" src="__PUBLIC__/ueditor/lang/zh-cn/zh-cn.js"></script>
-    <title>edit</title>
-</head>
+<layout name="Index/header_footer"/>
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+    <!--<meta http-equiv="content-type" content="text/html" charset="UTF-8">-->
+    <!--<script type="text/javascript" charset="utf-8" src="__PUBLIC__/ueditor/ueditor.config.js"></script>-->
+    <!--<script type="text/javascript" charset="utf-8" src="__PUBLIC__/ueditor/ueditor.all.min.js"></script>-->
+    <!--<script type="text/javascript" charset="utf-8" src="__PUBLIC__/ueditor/lang/zh-cn/zh-cn.js"></script>-->
+    <!--<title>edit</title>-->
+<!--</head>-->
 <body>
     <form method="POST" action="__SELF__" enctype="multipart/form-data">
         <input type="hidden" name="id" value="<?php echo $info['id']; ?>" />
         商品名称：<input type="text" name="goods_name" value="<?php echo $info['goods_name']; ?>" /><br/>
         商品价格：<input type="text" name="price" value="<?php echo $info['price']; ?>" /><br/>
-        <img src="<?php echo '/www.34.com/Public/Uploads/'.$info['sm_logo']; ?>" /><br/>
+        <img src="<?php echo '/Public/Uploads/'.$info['sm_logo']; ?>" /><br/>
         商品logo：<input type="file" name="logo"  /><br />
         <!--商品描述：<input type="text" name="goods_desc" /><br/>-->
         商品描述：<textarea name="goods_desc" id="goods_desc" ><?php echo $info['goods_desc']; ?></textarea><br/>
@@ -23,11 +24,11 @@
         <input type="submit" value="提交" />
     </form>
 </body>
-</html>
+<!--</html>-->
 <script>
     UE.getEditor('goods_desc',{
-        "initialFrameWidth" : "100%",  //宽
-        "initialFrameHeight" : 350,  //高
+        "initialFrameWidth" : "60%",  //宽
+        "initialFrameHeight" : 200,  //高
         "maximumWords" : 50000  // 最躲可以输入的字符数
     });
 </script>
