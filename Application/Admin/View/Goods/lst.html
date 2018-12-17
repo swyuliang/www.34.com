@@ -59,7 +59,7 @@
                 <th>操作</th>
             </tr>
             <?php foreach ($data as $k => $v): ?>
-            <tr>
+            <tr class="tron">
                 <td>{$v.id}</td>
                 <td><?php echo date('Y-m-d H:i:s', $v['addtime']); ?></td>
                 <td>{$v.goods_name}</td>
@@ -76,24 +76,21 @@
             </tr>
             <?php endforeach; ?>
             <!--<tr><td colspan="9" align="center" nowrap="true">{$page}</td></tr>-->
-
         </table>
 
     <!-- 分页开始 -->
         <table id="page-table" cellspacing="0">
-            <!--<tr>-->
-                <!--<td width="80%">&nbsp;</td>-->
-                <!--<td align="center" nowrap="true">-->
-                    <!--<{$showPage}>-->
-                <!--</td>-->
-            <!--</tr>-->
-            <tr>
-                <br class="space"/>
-                    <td colspan="9" align="center" nowrap="true">{$page}</td>
+        <tr>
+            <td width="80%"></td>
+            <td align="center" nowrap="true">
+                {$showPage}
+            </td>
+        </tr>
+        <tr>
+            <td colspan="9" align="center" nowrap="true">{$page}</td>
 
-            </tr>
+        </tr>
         </table>
-        <br class="space"/>
     <!-- 分页结束 -->
     </div>
 

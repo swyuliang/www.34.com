@@ -855,18 +855,15 @@ em, cite, th {
 
 /******翻页属性*******/
 span.current{
-  padding: 5px;
-  margin: 3px;
-  background: #2F9DB5;
-  border: 1px solid#2F9DB5;
+  padding: 3px;
+  margin: 2px;
+  background:#BBDDE5;
+  border: 1px solid#BBDDE5;
   color:white;
   font-weight: bold;}
 
 a.num{
-  padding:5px;
-  margin: 3px;
-  border:1px solid#2F9DB5;}
+  padding:3px;
+  margin: 2px;
+  border:1px solid#BBDDE5;}
 
-br.space{
-  background: white;
-}

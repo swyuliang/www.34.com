@@ -14,6 +14,7 @@
     <script type="text/javascript" charset="utf-8" src="/Public/ueditor/ueditor.all.min.js"></script>
     <script type="text/javascript" charset="utf-8" src="/Public/ueditor/lang/zh-cn/zh-cn.js"></script>
 
+    <script type="text/javascript" language="JavaScript" src="/Public/Admin/Js/tron.js"></script>
 </head>
 <body>
 <h1>
@@ -86,7 +87,7 @@
                 <th>操作</th>
             </tr>
             <?php foreach ($data as $k => $v): ?>
-            <tr>
+            <tr class="tron">
                 <td><?php echo ($v["id"]); ?></td>
                 <td><?php echo date('Y-m-d H:i:s', $v['addtime']); ?></td>
                 <td><?php echo ($v["goods_name"]); ?></td>
@@ -103,24 +104,21 @@
             </tr>
             <?php endforeach; ?>
             <!--<tr><td colspan="9" align="center" nowrap="true"><?php echo ($page); ?></td></tr>-->
-
         </table>
 
     <!-- 分页开始 -->
         <table id="page-table" cellspacing="0">
-            <!--<tr>-->
-                <!--<td width="80%">&nbsp;</td>-->
-                <!--<td align="center" nowrap="true">-->
-                    <!--<<?php echo ($showPage); ?>>-->
-                <!--</td>-->
-            <!--</tr>-->
-            <tr>
-                <br class="space"/>
-                    <td colspan="9" align="center" nowrap="true"><?php echo ($page); ?></td>
+        <tr>
+            <td width="80%"></td>
+            <td align="center" nowrap="true">
+                <?php echo ($showPage); ?>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="9" align="center" nowrap="true"><?php echo ($page); ?></td>
 
-            </tr>
+        </tr>
         </table>
-        <br class="space"/>
     <!-- 分页结束 -->
     </div>
 

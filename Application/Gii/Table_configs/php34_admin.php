@@ -14,7 +14,7 @@ return array(
 		array('username', '1,30', '账号的值最长不能超过 30 个字符！', 1, 'length', 3),
 		array('password', 'require', '密码不能为空！', 1, 'regex', 3),
 		array('password', '1,32', '密码的值最长不能超过 32 个字符！', 1, 'length', 3),
-		array('is_use', 'number', '是否启用 1：启用0：禁用必须是一个整数！', 2, 'regex', 3),
+		array('is_use', 'number', '是否启用 1：启用 0：禁用必须是一个整数！', 2, 'regex', 3),
 	",
 	/********************** 表中每个字段信息的配置 ****************************/
 	'fields' => array(
@@ -29,18 +29,19 @@ return array(
 			'default' => '',
 		),
 		'is_use' => array(
-			'text' => '是否启用 1：启用0：禁用',
+			'text' => '是否启用 1：启用 0：禁用',
 			'type' => 'radio',
-			'values' => array(
-				'1' => '启用',
-				'0' => '禁用',
-			),
+            'values' => array(
+              '1' => '启用',
+              '0' => '禁用',
+            ),
 			'default' => '1',
 		),
 	),
 	/**************** 搜索字段的配置 **********************/
 	'search' => array(
 		array('username', 'normal', '', 'like', '账号'),
-		array('is_use', 'in', '1-启用,0-禁用', '', '是否启用'),
+		array('password', 'normal', '', 'like', '密码'),
+		array('is_use', 'in', '1-启用，0-禁用', '', '是否启用'),
 	),
 );

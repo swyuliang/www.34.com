@@ -14,6 +14,7 @@
     <script type="text/javascript" charset="utf-8" src="/Public/ueditor/ueditor.all.min.js"></script>
     <script type="text/javascript" charset="utf-8" src="/Public/ueditor/lang/zh-cn/zh-cn.js"></script>
 
+    <script type="text/javascript" language="JavaScript" src="/Public/Admin/Js/tron.js"></script>
 </head>
 <body>
 <h1>
@@ -37,7 +38,7 @@
     <!--<title>add</title>-->
 <!--</head>-->
 <body>
-    <form name="main_form" method="POST" action="/index.php/Admin/Goods/add.html" enctype="multipart/form-data">
+    <form name="main_form" method="POST" action="/index.php/Admin/Goods/add" enctype="multipart/form-data">
         商品名称：<input type="text" name="goods_name" /><br/>
         商品价格：<input type="text" name="price" /><br/>
         商品logo：<input type="file" name="logo" /><br />

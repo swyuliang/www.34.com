@@ -27,25 +27,50 @@
 
 <!--代表页面中的内容-->
 
-<!-- 列表 -->
-<div class="list-div" id="listDiv">
-	<table cellpadding="3" cellspacing="1">
-    	<tr>
-            <th >分类名称</th>
-            <th >上级分类的ID，0：代表顶级</th>
-			<th width="60">操作</th>
-        </tr>
-		<?php foreach ($data as $k => $v): ?>            
-			<tr class="tron">
-				<td><?php echo str_repeat('-', 8*$v['level']); echo $v['cat_name']; ?></td>
-				<td><?php echo $v['parent_id']; ?></td>
-		        <td align="center">
-		        	<a href="<?php echo U('edit?id='.$v['id'].'&p='.I('get.p')); ?>" title="编辑">编辑</a> |
-	                <a href="<?php echo U('delete?id='.$v['id'].'&p='.I('get.p')); ?>" onclick="return confirm('确定要删除吗？');" title="移除">移除</a> 
-		        </td>
-	        </tr>
-        <?php endforeach; ?> 
-	</table>
+<div class="main-div">
+    <form name="main_form" method="POST" action="/index.php/Admin/Privilege/add.html" enctype="multipart/form-data">
+        <table cellspacing="1" cellpadding="3" width="100%">
+			<tr>
+				<td class="label">上级权限：</td>
+				<td>
+					<select name="parent_id">
+						<option value="0">顶级权限</option>
+						<?php foreach ($parentData as $k => $v): ?>						<option value="<?php echo $v['id']; ?>"><?php echo str_repeat('-', 8*$v['level']).$v['pri_name']; ?></option>
+						<?php endforeach; ?>					</select>
+				</td>
+			</tr>
+            <tr>
+                <td class="label">权限名称：</td>
+                <td>
+                    <input  type="text" name="pri_name" value="" />
+                </td>
+            </tr>
+            <tr>
+                <td class="label">模块名称：</td>
+                <td>
+                    <input  type="text" name="module_name" value="" />
+                </td>
+            </tr>
+            <tr>
+                <td class="label">控制器名称：</td>
+                <td>
+                    <input  type="text" name="controller_name" value="" />
+                </td>
+            </tr>
+            <tr>
+                <td class="label">方法名称：</td>
+                <td>
+                    <input  type="text" name="action_name" value="" />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="99" align="center">
+                    <input type="submit" class="button" value=" 确定 " />
+                    <input type="reset" class="button" value=" 重置 " />
+                </td>
+            </tr>
+        </table>
+    </form>
 </div>
 <script>
 </script>
