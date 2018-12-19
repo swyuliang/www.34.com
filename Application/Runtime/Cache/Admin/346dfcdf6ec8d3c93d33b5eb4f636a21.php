@@ -38,7 +38,7 @@
     <!--<title>add</title>-->
 <!--</head>-->
 <body>
-    <form name="main_form" method="POST" action="/index.php/Admin/Goods/add" enctype="multipart/form-data">
+    <form name="main_form" method="POST" action="/index.php/Admin/Goods/add.html" enctype="multipart/form-data">
         商品名称：<input type="text" name="goods_name" /><br/>
         商品价格：<input type="text" name="price" /><br/>
         商品logo：<input type="file" name="logo" /><br />

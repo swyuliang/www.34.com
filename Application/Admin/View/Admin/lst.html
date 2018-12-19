@@ -60,7 +60,7 @@
 			//也就是说，如果在AJAX时使用了U函数并且后面还要再传参数就需要设置第三个参数为FALSE不生成。html后缀
 				url : "<?php echo U('ajaxUpdateIsuse','',FALSE); ?>/id/"+id,
 			success :function (data) {
-				if(data == 1)
+				if(data == 0)
 					_this.html("禁用");
 				else
 					_this.html("启用");

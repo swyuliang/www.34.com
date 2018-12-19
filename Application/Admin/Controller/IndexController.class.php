@@ -24,15 +24,15 @@ class IndexController extends Controller
         if(CONTROLLER_NAME == 'Index')
             return TRUE;
 
-        $where ='module_name="'.MODULE_NAME.'"AND controller_name="'.CONTROLLER_NAME.'" AND action_name="'.ACTION_NAME.'"';
+        $where ='module_name="'.MODULE_NAME.'" AND controller_name="'.CONTROLLER_NAME.'" AND action_name="'.ACTION_NAME.'"';
 
         if($adminId == 1)
             $sql ='SELECT COUNT(*) has FROM php34_privilege WHERE '.$where;
         else
-            $sql ='SELECT COUNT(a.*) has FROM php34_role_privilege a 
+            $sql ='SELECT COUNT(a.role_id) has FROM php34_role_privilege a 
                   LEFT JOIN php34_privilege b ON a.pri_id=b.id
                   LEFT JOIN php34_admin_role c ON a.role_id = c.role_id
-                  WHERE c.admin_id='.$adminId.'AND '.$where;
+                  WHERE c.admin_id= '.$adminId. ' AND  '.$where;
         $db = M();
         $pri = $db->query($sql);
         if($pri[0]['has'] < 1)
@@ -44,6 +44,37 @@ class IndexController extends Controller
     }
 
     public function menu(){
+        //取出管理员前两级的权限
+        $adminId = session('id');
+        if($adminId == 1)
+            $sql ='SELECT * FROM php34_privilege';
+        else
+            $sql ='SELECT b.* FROM php34_role_privilege a 
+                  LEFT JOIN php34_privilege b ON a.pri_id=b.id
+                  LEFT JOIN php34_admin_role c ON a.role_id = c.role_id
+                  WHERE c.admin_id= '.$adminId;
+
+        $db = M();
+        $pri = $db->query($sql);
+
+        //从所有权限中取出前两级的权限
+        foreach ($pri as $k => $v)
+        {
+            //找顶级权限
+            if($v['parent_id'] == 0)
+            {
+                //再循环把这个顶级权限的子权限
+                foreach ($pri as $k1 => $v1)
+                {
+                    if($v1['parent_id'] == $v['id'])
+                    {
+                        $v['children'][] = $v1;
+                    }
+                }
+                $btn[] = $v;
+            }
+        }
+        $this->assign('btn',$btn);
         $this->display();
     }
 

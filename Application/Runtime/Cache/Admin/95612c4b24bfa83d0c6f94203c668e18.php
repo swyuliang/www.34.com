@@ -14,6 +14,7 @@
     <script type="text/javascript" charset="utf-8" src="/Public/ueditor/ueditor.all.min.js"></script>
     <script type="text/javascript" charset="utf-8" src="/Public/ueditor/lang/zh-cn/zh-cn.js"></script>
 
+    <script type="text/javascript" language="JavaScript" src="/Public/Admin/Js/tron.js"></script>
 </head>
 <body>
 <h1>
